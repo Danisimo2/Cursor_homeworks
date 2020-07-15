@@ -1,7 +1,7 @@
 //TASK 1
 const priceApple = 15.678;
 const kidCar = 123.965;
-const water = 9.2345;
+const water = 90.2345;
 
 console.log("Максимальне число: " + Math.max(priceApple, kidCar, water));
 
