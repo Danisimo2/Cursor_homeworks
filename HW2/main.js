@@ -1,19 +1,19 @@
 let sumAllNumbers = 0;
-let enterFirstNum = Math.floor(prompt('What is your first number?'));
+const enterFirstNum = Math.floor(prompt('What is your first number?'));
 let numberOne = parseInt(enterFirstNum);
 
 while(!enterFirstNum){
 	enterFirstNum = Number(prompt('Please, enter integer number'));
 }
 
-let enterSecondNum = Math.floor(prompt('What is your second number?'));
+const enterSecondNum = Math.floor(prompt('What is your second number?'));
 //let numberTwo = parseInt(enterSecondNum);
 
 while(!enterSecondNum || enterFirstNum >= enterSecondNum){
 	enterSecondNum = Number(prompt('Please, enter integer number and more than first number'));
 }
 console.log(enterSecondNum);
-let scapeEvenNum = confirm('Scape even number?')
+const scapeEvenNum = confirm('Scape even number?')
 
 if(scapeEvenNum){
 	while(numberOne <= enterSecondNum){
