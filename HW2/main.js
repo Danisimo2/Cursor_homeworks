@@ -1,4 +1,3 @@
-let sumAllNumbers = 0;
 let enterFirstNum = Math.floor(prompt('What is your first number?'));
 let numberOne = parseInt(enterFirstNum);
 
@@ -12,8 +11,9 @@ let enterSecondNum = Math.floor(prompt('What is your second number?'));
 while(!enterSecondNum || enterFirstNum >= enterSecondNum){
 	enterSecondNum = Number(prompt('Please, enter integer number and more than first number'));
 }
-console.log(enterSecondNum);
+
 let scapeEvenNum = confirm('Scape even number?')
+let sumAllNumbers = 0;
 
 if(scapeEvenNum){
 	while(numberOne <= enterSecondNum){
