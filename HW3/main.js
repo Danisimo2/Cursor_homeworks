@@ -48,15 +48,7 @@ document.writeln(`<p>Function #5 get random password: ${getRandomPassword(10)}</
 
 function isPalindrom(str){
         str = str.toLowerCase().replace(/\s/g, '');
-        let str2 = str.split('').reverse().join('');
-        console.log(str);
-        console.log(str2);
-        if(str === str2){
-            return true;
-        }
-        else{
-            return false;
-        }
+        return str === str.split('').reverse().join('');
 }
 document.writeln(`<p>Function #6 is words palindrom?: ${isPalindrom('я несу гусеня')}</p>`);
 
