@@ -34,7 +34,6 @@ function convertMoney(howMuch, currency){
 }
 document.writeln(`<p>Function #4 convert money: ${convertMoney(2500, 'uah')}</p>`);
 
-debugger;
 function getRandomPassword(numberDigits){
 	let pass = [];
 	for(let i = 0; i < numberDigits; i++){
@@ -45,10 +44,21 @@ function getRandomPassword(numberDigits){
 }
 document.writeln(`<p>Function #5 get random password: ${getRandomPassword(10)}</p>`);
 
-
 function isPalindrom(str){
         str = str.toLowerCase().replace(/\s/g, '');
         return str === str.split('').reverse().join('');
 }
 document.writeln(`<p>Function #6 is words palindrom?: ${isPalindrom('я несу гусеня')}</p>`);
 
+function isCounter(word, letter){
+	let count = 0;
+	word = word.toLowerCase();
+	letter = letter.toLowerCase();
+	for(let i = 0; i < word.length; i++){
+		if(word[i] === letter){
+			count++;
+		}
+	}
+	return count;
+}
+document.writeln(`<p>Function #7 how many letter?: ${isCounter('hello how are you', 'o')}</p>`);
