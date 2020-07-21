@@ -50,7 +50,7 @@ function isPalindrom(str){
 }
 document.writeln(`<p>Function #6 is words palindrom?: ${isPalindrom('я несу гусеня')}</p>`);
 
-function isCounter(word, letter){
+function getCounter(word, letter){
 	let count = 0;
 	word = word.toLowerCase();
 	letter = letter.toLowerCase();
@@ -61,4 +61,4 @@ function isCounter(word, letter){
 	}
 	return count;
 }
-document.writeln(`<p>Function #7 how many letter?: ${isCounter('hello how are you', 'o')}</p>`);
+document.writeln(`<p>Function #7 how many letter?: ${getCounter('hello how are you', 'o')}</p>`);
