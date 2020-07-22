@@ -1,11 +1,7 @@
 function getMaxNumber(num){
-	let number = String(num);
-	number = number.split('');
-	number = number.sort();
-	number = number.reverse();
-	return number;
+	return num = String(num).split('').sort().reverse();
 }
-document.writeln(`<p>Function #1 max number:  ${getMaxNumber(3124694)[0]}</p>`);
+document.writeln(`<p>Function #1 max number:  ${getMaxNumber(12357876545678)[0]}</p>`);
 
 function pow(x, n){
 	let number = 1;
