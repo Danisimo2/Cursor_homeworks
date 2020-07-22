@@ -9,12 +9,16 @@ document.writeln(`<p>Function #1 max number:  ${getMaxNumber(3124694)[0]}</p>`);
 
 function pow(x, n){
 	let number = 1;
-	for(let i = 1; i <= n; i++){
+	for(let i = 0; i < n; i++){
 		number *= x;
-	}
-	return number;
+	} if(n === 0) return 1;
+	else if(n < 0){
+		for(let i = 0; i < -n; i++){
+		number *= x;
+		} return number = 1/number;
+	} else return number;
 }
-document.writeln(`<p>Function #2 number in power: ${pow(-2, 4)}</p>`);
+document.writeln(`<p>Function #2 number in power: ${pow(2, -3)}</p>`);
 
 function removeName(name){
 	return name[0].toUpperCase() + name.slice(1).toLowerCase();
@@ -61,4 +65,4 @@ function getCounter(word, letter){
 	}
 	return count;
 }
-document.writeln(`<p>Function #7 how many letter?: ${getCounter('hello how are you', 'o')}</p>`);
+document.writeln(`<p>Function #7 how many letter?: ${getCounter('hello how are you', '')}</p>`);
