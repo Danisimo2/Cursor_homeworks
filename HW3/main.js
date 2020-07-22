@@ -67,4 +67,4 @@ function getCounter(word, letter){
 	}
 	return count;
 }
-document.writeln(`<p>Function #7 how many letter?: ${getCounter('hello how are you', '')}</p>`);
+document.writeln(`<p>Function #7 how many letter?: ${getCounter('hello how are you', 'o')}</p>`);
