@@ -11,7 +11,8 @@ function pow(x, n){
 	let number = 1;
 	for(let i = 0; i < n; i++){
 		number *= x;
-	} if(n === 0) return 1;
+	}if(x === 0 && n === 0) return 'it is an unsolved mystery';
+	else if(n === 0) return 1;
 	else if(x === 0) return 0;
 	else if(n < 0){
 		for(let i = 0; i < -n; i++){
@@ -19,7 +20,7 @@ function pow(x, n){
 		} return number = 1/number;
 	} else return number;
 }
-document.writeln(`<p>Function #2 number in power: ${pow(4, 0)}</p>`);
+document.writeln(`<p>Function #2 number in power: ${pow(2, -3)}</p>`);
 
 function removeName(name){
 	return name[0].toUpperCase() + name.slice(1).toLowerCase();
