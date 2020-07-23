@@ -1,7 +1,7 @@
 function getMaxNumber(num){
-	return num = String(num).split('').sort().reverse();
+	return num = String(num).split('').sort().reverse()
 }
-document.writeln(`<p>Function #1 max number:  ${getMaxNumber(12357876545678)[0]}</p>`);
+document.writeln(`<p>Function #1 max number:  ${getMaxNumber(14532564682)[0]}</p>`);
 
 function pow(x, n){
 	let number = 1;
@@ -23,20 +23,22 @@ function removeName(name){
 }
 document.writeln(`<p>Function #3 remove name: ${removeName('daNylo')}</p>`);
 
-function convertMoney(howMuch, currency){
+function convertMoney(howMuch){
 	let suma;
-	if(currency === '$'){
-		 suma = howMuch * 25 + 'grn';
-	} else if(currency === 'UAH' || currency === 'uah'){
-		suma = howMuch / 25 + '$';
-	} else{
-		return 'i dont know this currency, please enter "uah" or "$"'
-	}
+	const priceForDollar = 25;
+	howMuch = howMuch.toLowerCase();
+	if(howMuch.indexOf('$') === -1 && howMuch.indexOf('uah') === -1){
+		return 'wrong currency';
+	} else if(howMuch.indexOf('uah') !== -1){
+		return suma = howMuch.replace('uah','') / priceForDollar + '$';
+	} else if(howMuch.indexOf('$') !== -1){
+		return suma = howMuch.replace('$','') * priceForDollar + 'UAH';
+	} 
 	return suma;
 }
-document.writeln(`<p>Function #4 convert money: ${convertMoney(2500, 'uah')}</p>`);
+document.writeln(`<p>Function #4 convert money: ${convertMoney('250$')}</p>`);
 
-function getRandomPassword(numberDigits){
+function getRandomPassword(numberDigits = 8){
 	let pass = [];
 	for(let i = 0; i < numberDigits; i++){
 		let value = Math.floor(Math.random()*10);
@@ -44,7 +46,7 @@ function getRandomPassword(numberDigits){
 	}
 	return pass.join('');
 }
-document.writeln(`<p>Function #5 get random password: ${getRandomPassword(10)}</p>`);
+document.writeln(`<p>Function #5 get random password: ${getRandomPassword()}</p>`);
 
 function isPalindrom(str){
         str = str.toLowerCase().replace(/\s/g, '');
