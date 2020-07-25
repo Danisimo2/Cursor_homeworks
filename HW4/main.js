@@ -4,9 +4,9 @@ const marks = [4, 5, 5, 3, 4, 5];
 
 //First function
 function getPairs(students){
-    const pairsOfStudents = []; 
-    const boysStudents = [];
-    const girlsStudents = [];
+    let pairsOfStudents = []; 
+    let boysStudents = [];
+    let girlsStudents = [];
     for(student of students){
         if(student === "Саша" || student === "Ігор" || student === "Олексій"){
             boysStudents.push(student);
