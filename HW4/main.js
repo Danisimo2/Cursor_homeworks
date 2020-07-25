@@ -59,4 +59,4 @@ function pairsAndMark(pair, mark){
 	return pairAndMark;
 }
 
-document.writeln(`<p>результат  студента: ${pairsAndMark(pairs, marks)}</p>`);
+document.writeln(`<p>результат  студентів: ${pairsAndMark(pairs, marks)}</p>`);
