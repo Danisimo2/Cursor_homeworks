@@ -20,7 +20,6 @@ function getPairs(students){
     }
     return pairsOfStudents;
 }
-// console.log(students);
 let pairs = getPairs(students);
 document.writeln(`<p>пари студентів: ${pairs}</p>`);
 
