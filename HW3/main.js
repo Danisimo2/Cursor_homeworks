@@ -1,4 +1,3 @@
-debugger;
 function getMaxNumber(num){
 	return Number(num.toString().split('').sort().pop());
 }
