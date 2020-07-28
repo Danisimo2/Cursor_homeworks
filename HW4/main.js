@@ -16,7 +16,7 @@ function getPairs(students){
         }
     }
     for(let i = 0; i < 3; i++){
-        pairsOfStudents[i] = [`${boysStudents[i]} i ${girlsStudents[i]}`];
+        pairsOfStudents[i] = [`${boysStudents[i]}`, `${girlsStudents[i]}`];
     }
     return pairsOfStudents;
 }
@@ -28,7 +28,7 @@ document.writeln(`<p>пари студентів: ${pairs}</p>`);
 function themesForStudents(pair, them){
 	let studentThemes = [];
     for(let i = 0; i < themes.length; i++) {
-        studentThemes[i] = [`${pairs[i]} - ${themes[i]}`];
+        studentThemes[i] = [`${pairs[i].join(" i ")}`, `${themes[i]}`];
     }
     return studentThemes;
 }
@@ -40,7 +40,7 @@ document.writeln(`<p>теми студентів:${themesForStudent}</p>`);
 function studentAndMarks(students, marks){
 	let studentsAndMarks = [];
 	for(let i = 0; i < marks.length; i++){
-		studentsAndMarks[i] = [`${students[i]} - ${marks[i]}`];
+		studentsAndMarks[i] = [`${students[i]}`,  parseInt(`${marks[i]}`)];
 	}
 	return studentsAndMarks;
 }
@@ -57,7 +57,7 @@ function getRandomMark(minMark, maxMark) {
 function pairsAndMark(pair, mark){
 	let pairAndMark = [];
 	for (let i = 0; i < pairs.length; i++ ) {
-		pairAndMark[i] = [`${pairs[i]}, ${themes[i]} - ${getRandomMark(1, 5)}`];
+		pairAndMark[i] = [`${pairs[i].join(" i ")}`, `${themes[i]}`, parseInt(`${getRandomMark(1, 5)}`)];
 	}
 	return pairAndMark;
 }
