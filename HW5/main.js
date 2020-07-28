@@ -51,6 +51,5 @@ function divByThree(word){
 	}
 	return arr;
 }
-console.log(divByThree('антарктида'));
 document.writeln(`<p>№6 ділимо слово на 3 частини: [${divByThree('антарктида')}]</p>`);
 
