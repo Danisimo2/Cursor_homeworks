@@ -50,3 +50,48 @@ p{
 	font-size: 19px;
 	box-shadow: 10px 10px 10px rgba(0,0,0,0.5);
 }
+
+@media(max-width: 1466px){
+	p{
+		width: 50%;
+	}
+}
+@media(max-width: 1305px){
+	p{
+		width: 60%;
+	}
+}
+@media(max-width: 1305px){
+	p{
+		width: 60%;
+	}
+}
+@media(max-width: 1105px){
+	p{
+		width: 70%;
+	}
+}
+@media(max-width: 995px){
+	p{
+		width: 80%;
+	}
+	.back a{
+		width: 160px;
+		height: 40px;
+		font-size: 15px;
+	}
+}
+@media(max-width: 835px){
+	p{
+		height: 80px;
+		margin-bottom: 20px;
+	}
+	.back a{
+		width: 120px;
+		height: 30px;
+		font-size: 12px;
+	}
+	.HW{
+		padding-top: 50px;
+	}
+}
