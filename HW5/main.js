@@ -1,13 +1,4 @@
-const numbers = [5, -33, 3, -10, 2, 3.2, 33, 5, 5, 3];
-
-// function getRandonArray(length, min, max){
-// 	let randArr = [];
-// 	for(let i = 0; i < length; i++){
-// 		randArr.push(Math.floor(Math.random() * (max - min + 1)) + min);
-// 	}
-// 	return randArr
-// }
-// console.log(getRandonArray(5, 10, 100));
+const numbers = [5, -33, 3, -10, 2, 3.2, -33, 5, 5, 3];
 
 //1
 const getRandomArray = (length, min, max) => new Array(length).fill(null).map(() => 
@@ -22,11 +13,7 @@ document.writeln(`<p>№2 парні числа в масиві numebrs: [${even
 
 //3
 function posNum(...numbers){
-	let count = 0;
-	numbers.filter(item => {
-		if(item > 0) count++;
-	}); 
-	return count;
+	return numbers.filter(item => item > 0).length
 }
 document.writeln(`<p>№3 кількість чисел більших за 0: ${posNum(...numbers)}</p>`);
 
@@ -39,10 +26,11 @@ document.writeln(`<p>№4 числа, які націло діляться на 
 //5
 function getAverage(...numbers){
 	let filtered = numbers.filter(item => item % 1 === 0);
-	let middleValue = filtered.reduce((last, pres) => last + pres) / filtered.length
-	return middleValue.toFixed(2);
+	let middleValue = filtered.reduce((last, pres) => last + pres) / filtered.length;
+	return Number(middleValue.toFixed(2));
 }
 document.writeln(`<p>№5 отримуємо середнє значення з чисел в масиві numebrs: ${getAverage(...numbers)}</p>`);
+
 //6
 function divByThree(word){
 	let arr = [];
@@ -53,3 +41,12 @@ function divByThree(word){
 }
 document.writeln(`<p>№6 ділимо слово на 3 частини: [${divByThree('антарктида')}]</p>`);
 
+//7
+function getMedian(...numbers){
+	if(numbers.length % 2 === 0){
+		return (numbers[numbers.length / 2] + numbers[numbers.length / 2 - 1]) / 2;
+	} else{
+		return numbers[Math.floor(numbers.length / 2)];
+	}
+}
+document.writeln(`<p>№7 медіана масиву: ${getMedian(...numbers)}</p>`);

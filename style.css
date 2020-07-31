@@ -83,3 +83,9 @@ body{
 	justify-content: center;
 	align-items: center;
 }
+
+@media (max-width: 1400px){
+	.border .total_percent span{
+		font-size: 35px;
+	}
+}

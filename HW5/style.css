@@ -61,11 +61,7 @@ p{
 		width: 60%;
 	}
 }
-@media(max-width: 1305px){
-	p{
-		width: 60%;
-	}
-}
+
 @media(max-width: 1105px){
 	p{
 		width: 70%;
