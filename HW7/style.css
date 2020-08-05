@@ -1,0 +1,67 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	font-family: 'Montserrat', sans-serif;
+	background: linear-gradient(45deg, #F05281, #9C79F7);
+	height: 100%;
+}
+
+h1{
+	text-align: center;
+	padding: 30px 0 30px 0;
+	font-size: 40px;
+}
+
+.fn{
+	margin: 20px 0px 10px 50px;
+}
+
+button{
+	display: inline-block;
+	width: 115px;
+	height: 35px;
+	border-radius: 25px;
+	border: 0px;
+	outline: none;
+	cursor: pointer;
+	background-color: #39b9ef; 
+	color: #fff;
+	box-shadow:5px 5px 30px rgba(0,0,0,0.6);
+}
+button:hover{
+	background-color: #fff;
+	border: 1px solid #39b9ef;
+	color: #000;
+	transition: 0.3s;
+}
+.butt1 .btn2_f1, .btn2_f2, .btn2_f3, .btn2_f4{
+	margin: 15px 15px;
+}
+
+.answer1, .answer2, .answer3, .answer4{
+	display: block;
+	border: 1px solid black;
+	height: 40px;
+	width: 400px;
+	padding-top: 20px; 
+	padding-left: 10px;
+	border-radius: 5px;
+	font-size: 20px;
+}
+
+.stop{
+	display: block;
+	border: 1px solid black;
+	height: 40px;
+	width: 410px;
+	padding-top: 3px; 
+	border-radius: 5px;
+	font-size: 20px;
+	margin-left: 50px;
+	margin-bottom: 40px;
+}
+
+
