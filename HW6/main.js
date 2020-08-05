@@ -27,46 +27,36 @@ const students = [{
 //1
 function getSubjects(student){
     const subjects = Object.keys(student.subjects);
-    const sub = subjects.map(sub => (sub[0].toUpperCase() + sub.slice(1).toLowerCase()).replace('_', ' ', 'gi'));
-    return sub;
+    return subjects.map(sub => (sub[0].toUpperCase() + sub.slice(1).toLowerCase()).replace('_', ' ', 'gi'));
 }
 console.log(getSubjects(students[0]));
 
 //2
 function getAverageMark(avarage){
-    const subjects = Object.values(avarage.subjects).join(',').split(',');
-    let sum = subjects.reduce((last, pres) => parseInt(last) + parseInt(pres), 0);
+    const subjects = Object.values(avarage.subjects).flat();
+    let sum = subjects.reduce((acc, curr) => parseInt(acc) + parseInt(curr), 0);
     return Number((sum/subjects.length).toFixed(2));
 }
 console.log(getAverageMark(students[0]));
 
 //3
 function getStudentInfo(student){
-    return {
-        name: student.name,
-        course: student.course,
-        averageMark: getAverageMark(student)
-    }
+    const {name, course} = student;
+    return {name, course, averageMark: getAverageMark(student)}
 }
 console.log(getStudentInfo(students[2]));
 
 //4
 function getStudentsNames(students){
-    const name = students.map(item => item.name).sort();
-    return name;
+    return students.map(item => item.name).sort(); 
 }
 console.log(getStudentsNames(students));
 
 //5
 function getBestStudent(students){
-    let averageMark = [];
-    const studentName = students.map(item => item.name);
-    students.forEach(item => {
-        averageMark.push(getAverageMark(item));
-    });
-    let maxMark = Math.max(...averageMark);
-    let bestStudent = studentName[averageMark.indexOf(maxMark)];
-    return bestStudent;
+    const maxMark = Math.max(...students.map(item => getAverageMark(item)));
+    const bestStudent = students.find(item => getAverageMark(item) === maxMark);
+    return bestStudent.name;
 }
 console.log(getBestStudent(students));
 

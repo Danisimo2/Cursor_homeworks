@@ -34,7 +34,7 @@ button{
 button:hover{
 	background-color: #fff;
 	border: 1px solid #39b9ef;
-	color: #000;
+	color: #39b9ef;
 	transition: 0.3s;
 }
 .butt1 .btn2_f1, .btn2_f2, .btn2_f3, .btn2_f4{
