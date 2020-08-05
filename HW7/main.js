@@ -7,27 +7,18 @@ function getMyTaxes(salary){
 	const myTax = this.tax * salary;
 	return myTax;
 }
-// console.log(getMyTaxes.call(ukraine, 20000));
-// console.log(getMyTaxes.call(latvia, 20000));
-// console.log(getMyTaxes.call(litva, 20000));
 
 //2
 function getMiddleTaxes(){
 	const middleTax = this.tax * this.middleSalary;
 	return middleTax;
 }
-console.log(getMiddleTaxes.call(ukraine));
-console.log(getMiddleTaxes.call(latvia));
-console.log(getMiddleTaxes.call(litva));
 
 //3
 function getTotalTaxes(){
 	const totalTax = this.tax * this.middleSalary * this.vacancies;
 	return totalTax;
 }
-console.log(getTotalTaxes.call(ukraine));
-console.log(getTotalTaxes.call(latvia));
-console.log(getTotalTaxes.call(litva));
 
 //4 
 function getMySalary(country){
@@ -40,12 +31,6 @@ function getMySalary(country){
 	}
 	return randSalary();
 }
-// console.log(getMySalary(ukraine));
-// console.log(getMySalary(litva));
-// console.log(getMySalary(latvia));
-// setInterval(() => console.log(getMySalary(ukraine)), 10000);
-// setInterval(() => console.log(getMySalary(litva)), 10000);
-// setInterval(() => console.log(getMySalary(latvia)), 10000);
 
 const btn1_f1 = document.querySelector(".btn1_f1");
 const btn2_f1 = document.querySelector(".btn2_f1");
