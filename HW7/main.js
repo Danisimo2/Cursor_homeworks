@@ -35,6 +35,7 @@ function getMySalary(country){
 	function randSalary(){
 		let salary = Number(Math.floor(Math.random() * (2000 - 1500 + 1) + 1500).toFixed(2));
 		let profit = Number((salary - (salary * taxes)).toFixed(2));
+		taxes = Number((taxes * salary).toFixed(2));
 		answ4.innerHTML = `{tax: ${taxes}, salary: ${salary}, profit: ${profit}}`;
 	}
 	return randSalary();
