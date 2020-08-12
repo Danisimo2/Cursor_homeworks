@@ -1,81 +1,87 @@
-class Student{
-	constructor(course, university, fullName){
-		this.course = course;
-		this.university = university;
-		this.fullName = fullName;
-		this.marks = [5, 4, 4, 5];
-		this.getAverageMark = 0;
-		this.isStudent = true;
-	}
+const fn2 = document.querySelector(".fn2");
+const fn2_1 = document.querySelector(".fn2_1");
+const res_2 = document.querySelector(".res_2");
+const studentNewMark = document.querySelector(".fn3");
+const allMarksStart = document.querySelector(".fn3_1");
+const newMarksResult = document.querySelector(".res_3");
+const studentInfo = document.querySelectorAll(".fn1");
+const studentStart = document.querySelector(".fn1_1");
+const studentResult = document.querySelector(".res_1");
+const fn4 = document.querySelector(".fn4_1");
+const res4 = document.querySelector(".res_4");
+const fn5 = document.querySelector(".fn5_1");
+const res5 = document.querySelector(".res_5");
+const fn6 = document.querySelector(".fn6_1");
+const res6 = document.querySelector(".res_6");
+let student = null;
 
-	getInfo(){
-		return `студент ${this.course}го курсу, ${this.university}, ${this.fullName}`;
-	}
+class Student {
+  constructor(course, university, fullName) {
+    this.course = course;
+    this.university = university;
+    this.fullName = fullName;
+    this.marks = [];
+    this.getAverageMark = 0;
+    this.isStudent = true;
+  }
 
-	get allMarks(){
-		if(this.isStudent === true){
-			return this.marks;
-		} else{
-			return null;
-		}
-	}
+  getInfo() {
+    return `студент ${this.course}го курсу, ${this.university}, ${this.fullName}`;
+  }
 
-	set allMark(mark){
-		if(this.isStudent === true){
-			this.marks.push(mark);
-			return this.marks;
-		}else{
-			return null;
-		}
-	} 
+  get allMarks() {
+    if (this.isStudent) {
+      return this.marks;
+    }
+    return [];
+  }
 
-	getAverageMarks(){
-		if(this.isStudent === true){
-			this.getAverageMark = this.marks.reduce((acc, curr) => acc + curr, 0);
-			return Number((this.getAverageMark/this.marks.length).toFixed(3));
-		} else return null
-	}
+  set allMarks(value) {
+    if (this.isStudent && value > 0 && value <= 5) {
+      this.marks.push(parseInt(value));
+    }
+  }
 
-	dismiss(){
-	    return this.isStudent = false;
-	}
+  getAverageMarks() {
+    if (this.isStudent === true) {
+      this.getAverageMark = this.marks.reduce(
+        (acc, curr) => parseInt(acc) + parseInt(curr),
+        0
+      );
+      return Number((this.getAverageMark / this.marks.length).toFixed(3));
+    } else return null;
+  }
 
-	recover(){
-	    return this.isStudent = true;
-	}
+  dismiss() {
+    return (this.isStudent = false);
+  }
+
+  recover() {
+    return (this.isStudent = true);
+  }
 }
 
-class BudgetStudent extends Student{
-	constructor(course, university, fullName){
-		super(course, university, fullName);
-		setInterval(() => this.getScholarship(), 30000);
-	}
+class BudgetStudent extends Student {
+  constructor(course, university, fullName) {
+    super(course, university, fullName);
+    setInterval(() => this.getScholarship(), 30000);
+  }
 
-	getScholarship(){
-		if(this.isStudent === true && this.getAverageMarks() >= 4){
-			return console.log("Ви отримали стипендію 1400 грн.")
-		} else{
-			return console.log("Стипендії немає")
-		}
-	}
-};
+  getScholarship() {
+    if (this.isStudent === true && this.getAverageMarks() >= 4) {
+      return console.log("Ви отримали стипендію 1400 грн.");
+    } else {
+      return console.log("Стипендії немає");
+    }
+  }
+}
 
-const st1 = new Student('1', 'Вищої Школи Психотерапії м.Одеса', 'Остап Бендер');
+const stBd = new BudgetStudent(
+  "2",
+  "Вищої Школи Психотерапії м.Одеса",
+  "Остап Бендер"
+);
 
-const stBd = new BudgetStudent('2', 'Вищої Школи Психотерапії м.Одеса', 'Остап Бендер');
-console.log(st1.getInfo());
-console.log(st1.allMarks);
-st1.allMarks = 3;
-console.log(st1.allMarks);
-console.log(st1.getAverageMarks());
-st1.dismiss();
-console.log(st1.allMarks);
-st1.recover();
-console.log(st1.allMarks);
-
-console.log("");
-console.log("");
-console.log("");
 console.log("Advanced task");
 console.log("");
 
@@ -91,5 +97,51 @@ stBd.recover();
 stBd.allMarks = 5;
 console.log(stBd.allMarks);
 
+student = new Student();
+studentStart.addEventListener("click", () => {
+  if (
+    studentInfo[0].value &&
+    studentInfo[1].value &&
+    studentInfo[2].value &&
+    studentInfo[1].value > 0 &&
+    studentInfo[1].value <= 5
+  ) {
+    student = new Student(
+      studentInfo[1].value,
+      studentInfo[0].value,
+      studentInfo[2].value
+    );
+    studentResult.innerHTML = student.getInfo();
+  } else {
+    studentResult.innerHTML = "У нас немає такого студента";
+  }
+});
 
+allMarksStart.addEventListener("click", () => {
+  if (student.isStudent) {
+    if (studentNewMark.value) {
+      student.allMarks = studentNewMark.value;
+      newMarksResult.innerHTML = `Всі оцінки шо є у студента - ${student.marks}`;
+    }
+  } else {
+    newMarksResult.innerHTML = `${null}`;
+  }
+});
 
+fn4.addEventListener("click", () => {
+  if (student.isStudent) {
+    res4.innerHTML = `середній бал - ${student.getAverageMarks()}`;
+  } else {
+    res4.innerHTML = `${null}`;
+  }
+});
+
+fn5.addEventListener("click", () => {
+  student.dismiss();
+  res5.innerHTML = `студента виключено`;
+});
+
+fn6.addEventListener("click", () => {
+  student.recover();
+  res6.innerHTML = `студента поновлено`;
+});
