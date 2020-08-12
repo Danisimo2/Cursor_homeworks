@@ -19,7 +19,6 @@ body{
 }
 
 .fn1{
-	margin-top: 50px;
 	padding: 10px 10px;
 	border-radius: 10px;
 	border: 1px solid black;
@@ -28,7 +27,6 @@ body{
 }
 
 .fn3{
-	margin-top: 20px;
 	padding: 10px 10px;
 	border-radius: 10px;
 	border: 1px solid black;
@@ -40,15 +38,19 @@ body{
 	display: inline-block;
 	border: 0px;
 	box-sizing: content-box; 
-	padding: 10px 10px;
+	padding: 12px 10px;
 	border-radius: 10px;
 	background: none;
 	background-color: #0abde3;
 	outline: none;
 	cursor: pointer;
 	color: #fff; 
-	margin-top: 20px;
 	transition: .3s;
+}
+
+h2{
+	margin-top: 25px;
+	margin-bottom: 5px;
 }
 
 button:hover{
