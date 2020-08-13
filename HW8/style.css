@@ -36,7 +36,7 @@ body{
 
 .fn1_1, .fn3_1, .fn4_1, .fn5_1, .fn6_1{
 	display: inline-block;
-	border: 0px;
+	border: 1px solid #39b9ef;
 	box-sizing: content-box; 
 	padding: 12px 10px;
 	border-radius: 10px;
@@ -57,7 +57,7 @@ button:hover{
 	background-color: #fff;
 	color: #39b9ef;
 	transition: 0.3s;
-	border: 1px solid #39b9ef;
+	border-color: #39b9ef;
 }
 
 .res_1, .res_3, .res_4, .res_5, .res_6{
