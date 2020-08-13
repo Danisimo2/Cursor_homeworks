@@ -18,6 +18,14 @@ body{
 	font-size: 40px;
 }
 
+.fn1:first-child{
+	width: 280px;
+}
+
+#h2{
+	padding-left: 60px;
+}
+
 .fn1{
 	padding: 10px 10px;
 	border-radius: 10px;
