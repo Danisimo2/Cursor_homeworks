@@ -30,10 +30,7 @@ class Student {
   }
 
   get allMarks() {
-    if (this.isStudent) {
-      return this.marks;
-    }
-    return [];
+    return this.isStudent ? this.marks : [];
   }
 
   set allMarks(value) {
@@ -43,7 +40,7 @@ class Student {
   }
 
   getAverageMarks() {
-    if (this.isStudent === true) {
+	if (this.isStudent) {
       this.getAverageMark = this.marks.reduce(
         (acc, curr) => parseInt(acc) + parseInt(curr),
         0
@@ -53,11 +50,11 @@ class Student {
   }
 
   dismiss() {
-    return (this.isStudent = false);
+    this.isStudent = false;
   }
 
   recover() {
-    return (this.isStudent = true);
+    this.isStudent = true;
   }
 }
 
@@ -121,6 +118,7 @@ allMarksStart.addEventListener("click", () => {
   if (student.isStudent) {
     if (studentNewMark.value) {
       student.allMarks = studentNewMark.value;
+      studentNewMark.value = '';
       newMarksResult.innerHTML = `Всі оцінки шо є у студента - ${student.marks}`;
     }
   } else {
@@ -129,19 +127,19 @@ allMarksStart.addEventListener("click", () => {
 });
 
 fn4.addEventListener("click", () => {
-  if (student.isStudent) {
-    res4.innerHTML = `середній бал - ${student.getAverageMarks()}`;
-  } else {
-    res4.innerHTML = `${null}`;
-  }
+	student.isStudent ? res4.innerHTML = `середній бал - ${student.getAverageMarks()}`
+	: res4.innerHTML = `${null}`;
 });
 
+let switcher = false;
 fn5.addEventListener("click", () => {
-  student.dismiss();
-  res5.innerHTML = `студента виключено`;
-});
-
-fn6.addEventListener("click", () => {
-  student.recover();
-  res6.innerHTML = `студента поновлено`;
+	if(switcher){
+		switcher = false;
+  		student.recover();
+  		res5.innerHTML = `студента поновлено`;
+  	} else{
+  		switcher = true;
+  		student.dismiss();
+  		res5.innerHTML = `студента виключено`;
+  	}
 });
