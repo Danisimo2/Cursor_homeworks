@@ -21,7 +21,6 @@ class Student {
     this.university = university;
     this.fullName = fullName;
     this.marks = [];
-    this.getAverageMark = 0;
     this.isStudent = true;
   }
 
@@ -38,9 +37,13 @@ class Student {
   }
 
   getAverageMarks() {
-   return this.isStudent ? 
-   this.marks.reduce((acc, curr) => parseInt(acc) + parseInt(curr),0) / this.marks.length 
-   : null;
+   if (this.isStudent) {
+      this.getAverageMark = this.marks.reduce(
+        (acc, curr) => parseInt(acc) + parseInt(curr),
+        0
+      );
+      return Number((this.getAverageMark / this.marks.length).toFixed(3));
+    } else return null;
   }
 
   dismiss() {
@@ -128,10 +131,12 @@ fn4.addEventListener("click", () => {
 let switcher = false;
 fn5.addEventListener("click", () => {
 	if(switcher){
+		fn5.innerText = 'Виключити студента'
 		switcher = false;
   		student.recover();
   		res5.innerHTML = `студента поновлено`;
   	} else{
+  		fn5.innerText = 'Поновити студента'
   		switcher = true;
   		student.dismiss();
   		res5.innerHTML = `студента виключено`;
