@@ -1,6 +1,6 @@
-function generateBlock(){
-	const allBlocks = document.querySelector('.allBlocks');
-	return allBlocks.style.display = 'block';
+function generateBlock() {
+  const allBlocks = document.querySelector(".allBlocks");
+  return (allBlocks.style.display = "block");
 }
 
 function getRandomColor() {
@@ -9,20 +9,24 @@ function getRandomColor() {
   for (let i = 0; i < 6; i++) {
     color.push(symbols[Math.floor(Math.random() * 16)]);
   }
-  return `#${color.join('')}`;
+  return `#${color.join("")}`;
 }
 
-function setColor(){
-	const block = document.querySelectorAll('.block');
-	for(let i = 0; i < block.length; i++){
-		block[i].style.backgroundColor = `${getRandomColor()}`; 
-	}
+function setColor() {
+  const block = document.querySelectorAll(".block");
+  for (let i = 0; i < block.length; i++) {
+    block[i].style.backgroundColor = `${getRandomColor()}`;
+  }
 }
 
-function startInterval(){
-	timer = setInterval(() => setColor(), 1000);
-}
+const btn3 = document.querySelector(".btn3");
+btn3.addEventListener("click", () => {
+  btn3.style.visibility = "hidden";
+  timer = setInterval(() => setColor(), 1000);
+});
 
-function stopInterval(){
-	clearInterval(timer);
-}
+const btn4 = document.querySelector(".btn4");
+btn4.addEventListener("click", () => {
+  btn3.style.visibility = "visible";
+  clearInterval(timer);
+});

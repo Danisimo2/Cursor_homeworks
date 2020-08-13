@@ -48,6 +48,10 @@ body{
 	transition: .3s;
 }
 
+.btn3:hover{
+	transition: none;
+}
+
 button:hover{
 	background-color: #2980b9;
 	transition: .3s;
