@@ -34,19 +34,13 @@ class Student {
   }
 
   set allMarks(value) {
-    if (this.isStudent && value > 0 && value <= 5) {
-      this.marks.push(parseInt(value));
-    }
+    this.isStudent && value > 0 && value <= 5 ? this.marks.push(parseInt(value)) : null;
   }
 
   getAverageMarks() {
-	if (this.isStudent) {
-      this.getAverageMark = this.marks.reduce(
-        (acc, curr) => parseInt(acc) + parseInt(curr),
-        0
-      );
-      return Number((this.getAverageMark / this.marks.length).toFixed(3));
-    } else return null;
+   return this.isStudent ? 
+   this.marks.reduce((acc, curr) => parseInt(acc) + parseInt(curr),0) / this.marks.length 
+   : null;
   }
 
   dismiss() {
