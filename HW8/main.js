@@ -111,7 +111,7 @@ studentStart.addEventListener("click", () => {
   }
 });
 
-allMarksStart.addEventListener("click", () => {
+allMarksStart.addEventListener("click", (e) => {
   if (student.isStudent) {
     if (studentNewMark.value) {
       student.allMarks = studentNewMark.value;
