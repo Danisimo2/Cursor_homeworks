@@ -36,6 +36,8 @@ document.addEventListener('keyup', playSound);
 
 const butt = document.querySelectorAll('button');
 
+
+
 butt.forEach((select, i) => {
 	select.addEventListener('click', () => {
 		sound(`audio/au${i + 1}.mp3`)
