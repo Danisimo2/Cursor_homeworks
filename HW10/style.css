@@ -37,7 +37,8 @@ button{
 	color: white;
 	outline: none;
 	cursor: pointer;
-	transition: .3s; 
+	transition: .3s;
+	box-sizing: content-box; 
 }
 
 button:hover{
@@ -45,5 +46,13 @@ button:hover{
 	height: 130px;
 	font-size: 65px;
 	border-color: #2ecc71;
+	transition: .3s;
+}
+.play{
+	transition: .3s;
+}
+.play:hover{
+	border: 5px solid #2ecc71;
+	box-shadow: 0 0 20px #2ecc71;
 	transition: .3s;
 }

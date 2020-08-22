@@ -46,8 +46,9 @@ body{
 	list-style-type: none;
 	position:absolute;
 	bottom:0;
-	padding:50px 5px;
+	padding:30px 5px;
 	font-size: 30px;
+	overflow: auto;
 }
 
 .homeworks li a{
@@ -55,7 +56,10 @@ body{
 	color: white;
 	padding-left: 30px;
 }
-
+.homeworks li a span{
+	display: flex;
+	padding-left: 30px;
+}
 .homeworks li a:hover{
 	color:red;
 	transition: 0.3s;

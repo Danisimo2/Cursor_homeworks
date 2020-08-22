@@ -4,6 +4,11 @@ function sound(source){
 	audio.play();
 }
 
+function hoverOnClick(item){
+	item.classList.add("play");
+	setTimeout(() => item.classList.remove("play"), 1000);
+}
+
 function playSound(item){
 	switch(item.keyCode){
 		case 65:
@@ -29,28 +34,12 @@ function playSound(item){
 
 document.addEventListener('keyup', playSound);
 
-let butt = document.querySelectorAll('button');
-//можливо цей спосіб є дуже поганий, але я кращого не придумав
-butt[0].addEventListener('click', () =>{
-	sound('audio/au1.mp3');
-});
+const butt = document.querySelectorAll('button');
 
-butt[1].addEventListener('click', () =>{
-	sound('audio/au2.mp3');
-});
-
-butt[2].addEventListener('click', () =>{
-	sound('audio/au3.mp3');
-});
-
-butt[3].addEventListener('click', () =>{
-	sound('audio/au4.mp3');
-});
-
-butt[4].addEventListener('click', () =>{
-	sound('audio/au5.mp3');
-});
-
-butt[5].addEventListener('click', () =>{
-	sound('audio/au6.mp3');
+butt.forEach((select, i) => {
+	select.addEventListener('click', () => {
+		sound(`audio/au${i + 1}.mp3`)
+		butt[i].classList.add("play");
+		setTimeout(() => butt[i].classList.remove("play"), 1000);
+	});
 });
