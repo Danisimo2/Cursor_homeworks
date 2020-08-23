@@ -1,7 +1,7 @@
 const btn = document.querySelector(".btn");
 const res = document.querySelector(".result");
 const input = document.querySelector(".inp");
-const time = 50;
+const TIME = 50;
 
 function getRandomChinese(inp) {
   return new Promise((resolve, reject) => {
@@ -11,18 +11,23 @@ function getRandomChinese(inp) {
       sign += i;
       result.push(String.fromCharCode(sign));
     }
-    setTimeout(() => resolve(result.join("")), inp * time);
+    setTimeout(() => resolve(result.join("")), inp * TIME);
   });
 }
 
 btn.addEventListener("click", () => {
-  getRandomChinese(input.value).then(
-    (ress) => {
-      res.innerHTML = ress;
-    },
-    (error) => {
-      console.error("something went wrong: " + error);
-    }
-  );
-  input.value = "";
+  if(input.value > 0){
+    res.innerHTML = 'Please wait...';
+	getRandomChinese(input.value).then(
+	  (ress) => {
+	    res.innerHTML = ress;
+	  },
+	  (error) => {
+	    console.error("something went wrong: " + error);
+	  }
+	);
+	input.value = "";
+  } else{
+	res.innerHTML = 'Please, enter integer number, bigger than 1';
+  }
 });
