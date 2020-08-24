@@ -46,9 +46,10 @@ body{
 	list-style-type: none;
 	position:absolute;
 	bottom:0;
+	width: 100%;
 	padding:30px 5px;
 	font-size: 30px;
-	overflow: auto;
+	overflow-x: auto;
 }
 
 .homeworks li a{

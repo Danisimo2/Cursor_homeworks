@@ -17,7 +17,7 @@ function getRandomChinese(inp) {
 
 btn.addEventListener("click", () => {
   if(input.value > 0){
-    res.innerHTML = 'Please wait...';
+    res.innerHTML = `Please wait... it's take ${input.value * TIME} ms`;
 	getRandomChinese(input.value).then(
 	  (ress) => {
 	    res.innerHTML = ress;
@@ -28,6 +28,6 @@ btn.addEventListener("click", () => {
 	);
 	input.value = "";
   } else{
-	res.innerHTML = 'Please, enter integer number, bigger than 1';
+	res.innerHTML = 'Please, enter integer number, bigger than 0';
   }
 });
