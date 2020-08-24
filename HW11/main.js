@@ -17,7 +17,7 @@ function getRandomChinese(inp) {
 
 btn.addEventListener("click", () => {
   if(input.value > 0){
-    res.innerHTML = `Please wait... it's take ${input.value * TIME} ms`;
+    res.innerHTML = `Please wait... it's take ${(input.value * TIME) / 1000} sec`;
 	getRandomChinese(input.value).then(
 	  (ress) => {
 	    res.innerHTML = ress;
