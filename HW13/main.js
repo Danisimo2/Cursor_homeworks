@@ -21,27 +21,31 @@ btn.addEventListener('click', ()=>{
 //Advanced task
 
 let run = true;
-function* newFontSize(){
-	let font = 14;
+let font = 14;
+function* plusFontSize(){
 	while(run === true){
 		yield font += 2;
 	}
+}
+
+function* minusFontSize(){
 	while(run === false){
 		yield font -= 2
 	}
 }
 
-const newFont = newFontSize();
+const plusFontSiz = plusFontSize();
+const minusFontSiz = minusFontSize();
 
 result.innerHTML = 14;
 plus.addEventListener('click', ()=>{
 	run = true;
-	result.innerHTML = newFont.next().value;
+	result.innerHTML = plusFontSiz.next().value;
 });
 
 minus.addEventListener('click', ()=>{
 	run = false;
-	result.innerHTML = newFont.next().value;
+	result.innerHTML = minusFontSiz.next().value;
 	if(result.innerHTML <= 0){
 		result.innerHTML = "sorry, we can't enter number lesser than 1";
 	}
