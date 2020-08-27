@@ -21,7 +21,7 @@ btn.addEventListener('click', ()=>{
 //Advanced task
 
 let run = true;
-let font = 14;
+let font = 18;
 function* plusFontSize(){
 	while(run === true){
 		yield font += 2;
@@ -36,17 +36,21 @@ function* minusFontSize(){
 
 const plusFontSiz = plusFontSize();
 const minusFontSiz = minusFontSize();
-
-result.innerHTML = 14;
+const page = document.querySelector("h3");
+result.innerHTML = 18;
 plus.addEventListener('click', ()=>{
 	run = true;
-	result.innerHTML = plusFontSiz.next().value;
+	page.style.fontSize = `${plusFontSiz.next().value}px`;
+	result.innerHTML = font;
 });
 
 minus.addEventListener('click', ()=>{
 	run = false;
-	result.innerHTML = minusFontSiz.next().value;
-	if(result.innerHTML <= 0){
-		result.innerHTML = "sorry, we can't enter number lesser than 1";
+	page.style.fontSize = `${minusFontSiz.next().value}px`;
+	result.innerHTML = font;
+	if(font <= 1){
+		page.style.fontSize = `${2}px`;
+		font = 2;
+		result.innerHTML = "we can't enter number, lesser than 2";
 	}
 });
