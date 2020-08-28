@@ -24,11 +24,7 @@ let run;
 let font = 18;
 function* changeFontSize() {
   while (true) {
-    if (run == true) {
-      yield (font += 2);
-    } else {
-      yield (font -= 2);
-    }
+    run === true ? yield font += 2 : yield font -= 2;
   }
 }
 
