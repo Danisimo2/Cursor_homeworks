@@ -15,7 +15,7 @@ function* creatRandomId(){
 const ID = creatRandomId();
 
 btn.addEventListener('click', ()=>{
-	res.innerHTML = ID.next().value;
+	res.innerHTML = `Your ID is: ${ID.next().value}`;
 });
 
 //Advanced task
@@ -37,17 +37,18 @@ function* minusFontSize(){
 const plusFontSiz = plusFontSize();
 const minusFontSiz = minusFontSize();
 const page = document.querySelector("h3");
-result.innerHTML = 18;
+
+result.innerHTML = `${font}px`;
 plus.addEventListener('click', ()=>{
 	run = true;
 	page.style.fontSize = `${plusFontSiz.next().value}px`;
-	result.innerHTML = font;
+	result.innerHTML = `${font}px`;
 });
 
 minus.addEventListener('click', ()=>{
 	run = false;
 	page.style.fontSize = `${minusFontSiz.next().value}px`;
-	result.innerHTML = font;
+	result.innerHTML = `${font}px`;
 	if(font <= 1){
 		page.style.fontSize = `${2}px`;
 		font = 2;
